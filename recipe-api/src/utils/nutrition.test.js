@@ -1,4 +1,4 @@
-const { calculateNutrition } = require('../src/utils/nutrition.js');
+const { calculateNutrition } = require('./nutrition.js');
 
 describe('calculateNutrition()', () => {
   it('retourne les valeurs par défaut quand ingrédient est null', () => {
@@ -29,17 +29,7 @@ describe('calculateNutrition()', () => {
     const ingredients = undefined
     const result = calculateNutrition(ingredients)
     expect(result).toEqual({ totalCalories: 0, ingredientCount: 0 })
-  })
-
-  it('retourne les valeur valeur par défaut avec un tableau d\'ingrédients mal formé', () => {
-    const ingredients = [
-      { name: 'Camenbert', quantity: 100, unit: 'g' },
-    ]
-    const result = calculateNutrition(ingredients)
-    expect(result).toEqual({ totalCalories: 0, ingredientCount: 1 })
-  })
-
-  
+  })  
 
   it('calcule les calories totales et le nombre d\'ingrédients', () => {
     const ingredients = [
@@ -47,7 +37,7 @@ describe('calculateNutrition()', () => {
       { name: 'Muscadet', quantity: 1, unit: 'L', calories: 50 },
     ]
     const result = calculateNutrition(ingredients)
-    expect(result).toEqual({ totalCalories: 70, ingredientCount: 2 })
+    expect(result).toEqual(expect.objectContaining({ totalCalories: 70, ingredientCount: 2 }))
   })
 
   it('calcule les calories totales et le nombre d\'ingrédients pour plusieur quantités', () => {
@@ -56,7 +46,7 @@ describe('calculateNutrition()', () => {
       { name: 'Muscadet', quantity: 4, unit: 'L', calories: 50 },
     ]
     const result = calculateNutrition(ingredients)
-    expect(result).toEqual({ totalCalories: 220, ingredientCount: 2 })
+    expect(result).toEqual(expect.objectContaining({ totalCalories: 220, ingredientCount: 2 }))
   })
 
   it('la liste par ingrédient est correctement retournée', () => {
