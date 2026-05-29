@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "title": "Le Petit Prince",
+    "author": "Antoine de Saint-Exupéry",
+    "isbn": "9782070612758",
+    "year": 1943,
+    "available": true,
+    "borrower": null,
+    "borrowedAt": null
+  },
+  {
+    "id": 2,
+    "title": "L'Étranger",
+    "author": "Albert Camus",
+    "isbn": "9782070360024",
+    "year": 1942,
+    "available": false,
+    "borrower": "Marie Martin",
+    "borrowedAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": 3,
+    "title": "Germinal",
+    "author": "Émile Zola",
+    "isbn": "2070413101",
+    "year": 1885,
+    "available": true,
+    "borrower": null,
+    "borrowedAt": null
+  },
+  {
+    "id": 4,
+    "title": "Les Misérables",
+    "author": "Victor Hugo",
+    "isbn": "9782253004226",
+    "year": 1862,
+    "available": true,
+    "borrower": null,
+    "borrowedAt": null
+  },
+  {
+    "id": 5,
+    "title": "Madame Bovary",
+    "author": "Gustave Flaubert",
+    "isbn": "9782070413119",
+    "year": 1857,
+    "available": false,
+    "borrower": "Paul Durand",
+    "borrowedAt": "2024-01-20T14:30:00Z"
+  },
+  {
+    "id": 6,
+    "title": "Nausée",
+    "author": "Jean-Paul Sartre",
+    "isbn": "2070360024",
+    "year": 1938,
+    "available": true,
+    "borrower": null,
+    "borrowedAt": null
+  },
+  {
+    "id": 7,
+    "title": "Voyage au bout de la nuit",
+    "author": "Louis-Ferdinand Céline",
+    "isbn": "9782070360628",
+    "year": 1932,
+    "available": true,
+    "borrower": null,
+    "borrowedAt": null
+  },
+  {
+    "id": 8,
+    "title": "Le Rouge et le Noir",
+    "author": "Stendhal",
+    "isbn": "9782070360024",
+    "year": 1830,
+    "available": false,
+    "borrower": "alice",
+    "borrowedAt": "2024-02-01T10:00:00Z"
+  },
+  {
+    "id": 9,
+    "title": "Madame Bovary",
+    "author": "Gustave Flaubert",
+    "isbn": "9782070360031",
+    "year": 1857,
+    "available": true,
+    "borrower": null,
+    "borrowedAt": null
+  },
+  {
+    "id": 10,
+    "title": "Les Misérables",
+    "author": "Victor Hugo",
+    "isbn": "9782070409181",
+    "year": 1862,
+    "available": false,
+    "borrower": "bob",
+    "borrowedAt": "2024-02-05T14:30:00Z"
+  },
+  {
+    "id": 11,
+    "title": "L'Étranger",
+    "author": "Albert Camus",
+    "isbn": "9782070360025",
+    "year": 1942,
+    "available": true,
+    "borrower": null,
+    "borrowedAt": null
+  },
+  {
+    "id": 12,
+    "title": "Le Comte de Monte-Cristo",
+    "author": "Alexandre Dumas",
+    "isbn": "9782070409228",
+    "year": 1844,
+    "available": true,
+    "borrower": null,
+    "borrowedAt": null
+  },
+  {
+    "id": 13,
+    "title": "Germinal",
+    "author": "Émile Zola",
+    "isbn": "9782070413119",
+    "year": 1885,
+    "available": false,
+    "borrower": "charlie",
+    "borrowedAt": "2024-02-10T09:15:00Z"
+  },
+  {
+    "id": 14,
+    "title": "La Peste",
+    "author": "Albert Camus",
+    "isbn": "9782070360421",
+    "year": 1947,
+    "available": true,
+    "borrower": null,
+    "borrowedAt": null
+  },
+  {
+    "id": 15,
+    "title": "Bel-Ami",
+    "author": "Guy de Maupassant",
+    "isbn": "9782070409303",
+    "year": 1885,
+    "available": false,
+    "borrower": "david",
+    "borrowedAt": "2024-02-12T16:45:00Z"
+  },
+  {
+    "id": 16,
+    "title": "Candide",
+    "author": "Voltaire",
+    "isbn": "9782070360026",
+    "year": 1759,
+    "available": true,
+    "borrower": null,
+    "borrowedAt": null
+  },
+  {
+    "id": 17,
+    "title": "Les Fleurs du mal",
+    "author": "Charles Baudelaire",
+    "isbn": "9782070323519",
+    "year": 1857,
+    "available": true,
+    "borrower": null,
+    "borrowedAt": null
+  },
+  {
+    "id": 18,
+    "title": "Le Père Goriot",
+    "author": "Honoré de Balzac",
+    "isbn": "9782070360032",
+    "year": 1835,
+    "available": false,
+    "borrower": "alice",
+    "borrowedAt": "2024-02-15T11:20:00Z"
+  },
+  {
+    "id": 19,
+    "title": "Notre-Dame de Paris",
+    "author": "Victor Hugo",
+    "isbn": "9782070409204",
+    "year": 1831,
+    "available": true,
+    "borrower": null,
+    "borrowedAt": null
+  },
+  {
+    "id": 20,
+    "title": "Le Horla",
+    "author": "Guy de Maupassant",
+    "isbn": "9782070360027",
+    "year": 1887,
+    "available": false,
+    "borrower": "bob",
+    "borrowedAt": "2024-02-18T13:10:00Z"
+  },
+  {
+    "id": 21,
+    "title": "L'Assommoir",
+    "author": "Émile Zola",
+    "isbn": "9782070409327",
+    "year": 1877,
+    "available": true,
+    "borrower": null,
+    "borrowedAt": null
+  },
+  {
+    "id": 22,
+    "title": "La Condition humaine",
+    "author": "André Malraux",
+    "isbn": "9782070360033",
+    "year": 1933,
+    "available": false,
+    "borrower": "charlie",
+    "borrowedAt": "2024-02-20T10:00:00Z"
+  },
+  {
+    "id": 23,
+    "title": "Les Confessions",
+    "author": "Jean-Jacques Rousseau",
+    "isbn": "9782070360034",
+    "year": 1782,
+    "available": true,
+    "borrower": null,
+    "borrowedAt": null
+  },
+  {
+    "id": 24,
+    "title": "La Chartreuse de Parme",
+    "author": "Stendhal",
+    "isbn": "9782070360035",
+    "year": 1839,
+    "available": false,
+    "borrower": "alice",
+    "borrowedAt": "2024-02-22T15:30:00Z"
+  },
+  {
+    "id": 25,
+    "title": "Les Liaisons dangereuses",
+    "author": "Pierre Choderlos de Laclos",
+    "isbn": "9782070360036",
+    "year": 1782,
+    "available": true,
+    "borrower": null,
+    "borrowedAt": null
+  },
+  {
+    "id": 26,
+    "title": "Manon Lescaut",
+    "author": "Abbé Prévost",
+    "isbn": "9782070360037",
+    "year": 1731,
+    "available": false,
+    "borrower": "david",
+    "borrowedAt": "2024-02-25T12:15:00Z"
+  },
+  {
+    "id": 27,
+    "title": "La Mare au Diable",
+    "author": "George Sand",
+    "isbn": "9782070360038",
+    "year": 1846,
+    "available": true,
+    "borrower": null,
+    "borrowedAt": null
+  },
+  {
+    "id": 28,
+    "title": "Poil de Carotte",
+    "author": "Jules Renard",
+    "isbn": "9782070360039",
+    "year": 1894,
+    "available": false,
+    "borrower": "bob",
+    "borrowedAt": "2024-02-27T09:40:00Z"
+  },
+  {
+    "id": 29,
+    "title": "La Princesse de Clèves",
+    "author": "Madame de La Fayette",
+    "isbn": "9782070360040",
+    "year": 1678,
+    "available": true,
+    "borrower": null,
+    "borrowedAt": null
+  },
+  {
+    "id": 30,
+    "title": "Le Grand Meaulnes",
+    "author": "Alain-Fournier",
+    "isbn": "9782070360041",
+    "year": 1913,
+    "available": false,
+    "borrower": "charlie",
+    "borrowedAt": "2024-03-01T14:20:00Z"
+  }
+]
