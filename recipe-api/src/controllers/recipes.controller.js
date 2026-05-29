@@ -6,7 +6,8 @@ const recipesController = {
     const { category, maxTime } = req.query
     let recipes = RecipeModel.findAll()
 
-    if (category) {
+    // correction du undefined
+    if (category !== undefined) {
       recipes = recipes.filter((r) => r.category === category)
     }
 
@@ -19,16 +20,25 @@ const recipesController = {
 
   getRecipeById(req, res) {
     const recipe = RecipeModel.findById(req.params.id)
+
+    // correction de la recette null
     if (!recipe) {
-      return res.status(404).json({ success: false, error: "Recipe not found" })
+      return res
+        .status(404)
+        .json({ success: false, error: "Recipe not found" })
     }
+
     res.json({ success: true, data: recipe })
   },
 
   createRecipe(req, res) {
     const { title, ingredients, steps, prepTime, category } = req.body
 
-    if (!title || !prepTime || !category) {
+    // correction des champs requis
+    const invalidPrepTime =
+      typeof prepTime !== "number" || prepTime <= 0
+
+    if (!title || !category || invalidPrepTime) {
       return res.status(400).json({
         success: false,
         error: "Missing required fields: title, prepTime, category",
@@ -42,54 +52,87 @@ const recipesController = {
       prepTime,
       category,
     })
+
     res.status(201).json({ success: true, data: recipe })
   },
 
   updateRecipe(req, res) {
     const recipe = RecipeModel.findById(req.params.id)
+
+    // correction de la recette null
     if (!recipe) {
-      return res.status(404).json({ success: false, error: "Recipe not found" })
+      return res
+        .status(404)
+        .json({ success: false, error: "Recipe not found" })
     }
 
     const updated = RecipeModel.update(req.params.id, req.body)
+
     res.json({ success: true, data: updated })
   },
 
   deleteRecipe(req, res) {
     const deleted = RecipeModel.delete(req.params.id)
+
+    // correction de la recette null
     if (!deleted) {
-      return res.status(404).json({ success: false, error: "Recipe not found" })
+      return res
+        .status(404)
+        .json({ success: false, error: "Recipe not found" })
     }
+
     res.json({ success: true, data: deleted })
   },
 
   rateRecipe(req, res) {
     const recipe = RecipeModel.findById(req.params.id)
+
+    // correction de la recette null
     if (!recipe) {
-      return res.status(404).json({ success: false, error: "Recipe not found" })
+      return res
+        .status(404)
+        .json({ success: false, error: "Recipe not found" })
     }
 
     const { rating } = req.body
-    if (!rating || rating < 1 || rating > 5) {
+
+    // correction de input du rating
+    if (
+      typeof rating !== "number" ||
+      Number.isNaN(rating) ||
+      rating < 1 ||
+      rating > 5
+    ) {
       return res
         .status(400)
-        .json({ success: false, error: "Rating must be between 1 and 5" })
+        .json({
+          success: false,
+          error: "Rating must be between 1 and 5",
+        })
     }
 
-    recipe.ratings.push(Number(rating))
+    // correction du push du rating
+    recipe.ratings.push(rating)
     const sum = recipe.ratings.reduce((acc, r) => acc + r, 0)
-    recipe.averageRating = sum / (recipe.ratings.length - 1)
+
+    // correction du calcalue de la moyenne
+    recipe.averageRating = sum / recipe.ratings.length
 
     res.json({ success: true, data: recipe })
   },
 
   getNutrition(req, res) {
     const recipe = RecipeModel.findById(req.params.id)
+
+    // correction de la recette null
     if (!recipe) {
-      return res.status(404).json({ success: false, error: "Recipe not found" })
+      return res
+        .status(404)
+        .json({ success: false, error: "Recipe not found" })
     }
 
     const nutrition = calculateNutrition(recipe.ingredients)
+
     res.json({ success: true, data: nutrition })
   },
 }
