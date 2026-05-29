@@ -1,14 +1,21 @@
-/**
- * Calculates estimated nutritional info from a list of ingredients.
- * Each ingredient has: { name, quantity, unit, calories }
- */
 const calculateNutrition = (ingredients) => {
-  if (!ingredients || ingredients.length === 0) {
+  if (!Array.isArray(ingredients) || ingredients.length === 0) {
     return { totalCalories: 0, ingredientCount: 0 }
   }
 
-  const totalCalories = ingredients.reduce((sum, ingredient) => {
-    return sum + ingredient.calories
+  const isValidNumber = (val) =>
+    typeof val === 'number' && !isNaN(val) && isFinite(val) && val > 0
+
+  for (const ingredient of ingredients) {
+    const { quantity, calories } = ingredient
+
+    if (!isValidNumber(quantity) || !isValidNumber(calories)) {
+      return "Error: Quantité et calories doivent être des nombres positifs"
+    }
+  }
+
+  const totalCalories = ingredients.reduce((sum, { quantity, calories }) => {
+    return sum + quantity * calories
   }, 0)
 
   return {
@@ -16,7 +23,7 @@ const calculateNutrition = (ingredients) => {
     ingredientCount: ingredients.length,
     perIngredient: ingredients.map((i) => ({
       name: i.name,
-      calories: i.calories,
+      calories: i.quantity * i.calories,
     })),
   }
 }
