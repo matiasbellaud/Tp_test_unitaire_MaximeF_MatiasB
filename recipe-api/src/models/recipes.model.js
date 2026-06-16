@@ -31,7 +31,11 @@ const RecipeModel = {
   update(id, data) {
     const idx = recipes.findIndex((r) => r.id === parseInt(id))
     if (idx === -1) return null
-    Object.assign(recipes[idx], data)
+    
+    // ne pas écraser l'id d'origine
+    const { id: _, ...updateData } = data
+    Object.assign(recipes[idx], updateData)
+    
     return recipes[idx]
   },
 
