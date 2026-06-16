@@ -3,6 +3,8 @@ const errorHandler = require('./errorHandler.js');
 describe('errorHandler middleware', () => {
   beforeEach(() => {
     jest.restoreAllMocks();
+    // Mock console.error pour éviter les logs dans les tests (aide de l'ia pour éviter les logs dans les tests)
+    jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
   it('retourne le statut personnalisé et le message d\'erreur', () => {
@@ -103,8 +105,7 @@ describe('errorHandler middleware', () => {
 
   it('logge err.stack via console.error', () => {
     const err = new Error('Test error');
-    // Mock console.error pour vérifier qu'il est appelé avec err.stack sans afficher les logs de test (aide de l'ia pour éviter les logs de test dans la console)
-    const consoleSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    const req = {};
     const res = {
       status: jest.fn().mockReturnThis(),
       json: jest.fn(),
@@ -113,7 +114,7 @@ describe('errorHandler middleware', () => {
 
     errorHandler(err, req, res, next);
 
-    expect(consoleSpy).toHaveBeenCalledWith(err.stack);
+    expect(console.error).toHaveBeenCalledWith(err.stack);
     expect(next).not.toHaveBeenCalled();
   });
 });
